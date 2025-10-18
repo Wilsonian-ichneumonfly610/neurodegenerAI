@@ -1,4 +1,4 @@
-[![CI/CD](https://github.com/zaydabash/neuro-trends-suite/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/zaydabash/neuro-trends-suite/actions)
+[![CI/CD](https://github.com/zaydabash/neurodegenerAI/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/zaydabash/neurodegenerAI/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
@@ -62,7 +62,7 @@ neuro-trends-suite/
 
 ### 1. Clone and Setup
 ```bash
-git clone https://github.com/zaydabash/neuro-trends-suite.git
+git clone https://github.com/zaydabash/neurodegenerAI.git
 cd neuro-trends-suite
 ```
 
@@ -296,7 +296,7 @@ pytest --cov=shared --cov=neurodegenerai/src --cov=trend-detector/src \
 ### Development Setup
 ```bash
 # Clone and setup development environment
-git clone https://github.com/zaydabash/neuro-trends-suite.git
+git clone https://github.com/zaydabash/neurodegenerAI.git
 cd neuro-trends-suite
 make setup
 
