@@ -58,33 +58,33 @@ neuro-trends-suite/
 ### NeuroDegenerAI Model Performance
 
 #### ROC Curve
-![ROC Curve](reports/roc_curve.png)
+![ROC Curve](docs/images/roc_curve.png)
 *Model performance with AUC = 0.87, demonstrating excellent classification capability for neurodegenerative pattern detection.*
 
 #### Precision-Recall Curve
-![Precision-Recall Curve](reports/pr_curve.png)
+![Precision-Recall Curve](docs/images/pr_curve.png)
 *Precision-recall analysis showing Average Precision = 0.82, critical for medical diagnosis applications.*
 
 #### Grad-CAM Interpretability
-![Grad-CAM Heatmap](reports/gradcam_sample.png)
+![Grad-CAM Heatmap](docs/images/gradcam_sample.png)
 *Brain region attention visualization showing which areas the model focuses on for predictions - essential for clinical interpretability.*
 
 #### Confusion Matrix
-![Confusion Matrix](reports/confusion_matrix.png)
+![Confusion Matrix](docs/images/confusion_matrix.png)
 *Detailed classification results showing model performance across different categories.*
 
 ### Real-Time Trend Detector Analytics
 
 #### UMAP Cluster Visualization
-![UMAP Clusters](reports/umap_clusters.png)
+![UMAP Clusters](docs/images/umap_clusters.png)
 *Real-time topic clustering showing 8 distinct categories (AI/ML, Crypto, Tech News, Gaming, Science, Health, Climate, Space) discovered from social media streams.*
 
 #### Trend Timeline Analysis
-![Trend Timeline](reports/trend_timeline.png)
+![Trend Timeline](docs/images/trend_timeline.png)
 *Live trend volume tracking demonstrating real-time social media trend analysis capabilities.*
 
 ### System Architecture
-![System Architecture](architecture.md)
+[View System Architecture Diagram](docs/architecture.md)
 *Complete system architecture showing data flow from ADNI/social media sources through ML pipelines to user interfaces.*
 
 ## Quick Start

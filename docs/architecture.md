@@ -8,41 +8,41 @@ flowchart TB
     ADNI[ADNI Dataset<br/>MRI & Tabular Data] --> NeuroIngest[Data Ingestion]
     Reddit[Reddit API] --> TrendIngest[Social Media Stream]
     X[X/Twitter API] --> TrendIngest
-    
+
     %% NeuroDegenerAI Pipeline
     NeuroIngest --> NeuroPreprocess[Data Preprocessing]
     NeuroPreprocess --> NeuroFeatures[Feature Engineering]
     NeuroFeatures --> NeuroTrain[Model Training<br/>LightGBM/XGBoost/CNN]
     NeuroTrain --> NeuroModels[Saved Models]
     NeuroModels --> NeuroAPI[NeuroDegenerAI API<br/>FastAPI]
-    
+
     %% Trend Detector Pipeline
     TrendIngest --> TrendEmbed[Text Embeddings<br/>sentence-transformers]
     TrendEmbed --> TrendCluster[Topic Clustering<br/>HDBSCAN/BERTopic]
     TrendCluster --> TrendTopics[Trend Analysis]
     TrendTopics --> TrendAPI[Trend Detector API<br/>FastAPI]
-    
+
     %% APIs
     NeuroAPI --> Hub[Unified Dashboard<br/>Streamlit Hub]
     TrendAPI --> Hub
-    
+
     %% User Interfaces
     Hub --> NeuroUI[NeuroDegenerAI UI<br/>Port 8501]
     Hub --> TrendUI[Trend Detector UI<br/>Port 8502]
     Hub --> MainUI[Main Hub UI<br/>Port 8503]
-    
+
     %% External Access
     NeuroUI --> User[Users/Researchers]
     TrendUI --> User
     MainUI --> User
-    
+
     %% Styling
     classDef dataSource fill:#e1f5fe
     classDef processing fill:#f3e5f5
     classDef api fill:#e8f5e8
     classDef ui fill:#fff3e0
     classDef user fill:#ffebee
-    
+
     class ADNI,Reddit,X dataSource
     class NeuroIngest,NeuroPreprocess,NeuroFeatures,NeuroTrain,TrendIngest,TrendEmbed,TrendCluster,TrendTopics processing
     class NeuroAPI,TrendAPI api
