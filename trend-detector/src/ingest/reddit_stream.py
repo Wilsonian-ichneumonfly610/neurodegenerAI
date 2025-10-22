@@ -68,7 +68,7 @@ class RedditStream(LoggerMixin):
 
                 # Test connection
                 self.reddit.read_only = True
-                self.reddit.subreddit(
+                _ = self.reddit.subreddit(
                     "test"
                 ).id  # This will raise an exception if credentials are invalid
 

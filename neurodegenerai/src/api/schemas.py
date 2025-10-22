@@ -91,7 +91,7 @@ class MRIPredictionRequest(BaseModel):
                 raise ValueError("Volume data cannot be empty")
 
         except Exception as e:
-            raise ValueError(f"Invalid volume data format: {e}")
+            raise ValueError(f"Invalid volume data format: {e}") from e
 
         return v
 

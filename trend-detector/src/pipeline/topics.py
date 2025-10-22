@@ -125,7 +125,7 @@ class TrendAnalyzer(LoggerMixin):
                     )
                     if post_time >= cutoff_time:
                         recent_posts.append(post)
-                except:
+                except Exception:
                     continue
 
             # Normalize by time window (posts per hour)
@@ -228,7 +228,7 @@ class TrendAnalyzer(LoggerMixin):
                         post.get("timestamp", "").replace("Z", "+00:00")
                     )
                     post_times.append(post_time)
-                except:
+                except Exception:
                     continue
 
             if len(post_times) < 2:
@@ -481,7 +481,7 @@ class TrendAnalyzer(LoggerMixin):
 
             # Calculate average trend scores
             all_trend_scores = []
-            for topic_id, history in self.topic_history.items():
+            for _topic_id, history in self.topic_history.items():
                 if history:
                     latest_score = history[-1]["trend_score"]
                     all_trend_scores.append(latest_score)

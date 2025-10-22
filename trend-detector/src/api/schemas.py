@@ -115,7 +115,7 @@ class EmbeddingRequest(BaseModel):
     """Embedding request."""
 
     texts: list[str] = Field(
-        ..., min_items=1, max_items=1000, description="Texts to embed"
+        ..., min_length=1, max_length=1000, description="Texts to embed"
     )
     model_name: str | None = Field(None, description="Embedding model name")
 
@@ -133,7 +133,7 @@ class ClusteringRequest(BaseModel):
     """Clustering request."""
 
     texts: list[str] = Field(
-        ..., min_items=10, max_items=10000, description="Texts to cluster"
+        ..., min_length=10, max_length=10000, description="Texts to cluster"
     )
     min_topic_size: int = Field(10, ge=5, le=100, description="Minimum topic size")
     n_neighbors: int = Field(15, ge=5, le=50, description="UMAP neighbors")
@@ -160,11 +160,11 @@ class TopicAnalysisResponse(BaseModel):
     """Topic analysis response."""
 
     topic_id: int = Field(..., description="Topic ID")
-    topic_words: list[Tuple[str, float]] = Field(
+    topic_words: list[tuple[str, float]] = Field(
         ..., description="Topic words with weights"
     )
     evolution_data: dict[str, Any] = Field(..., description="Topic evolution over time")
-    similar_topics: list[Tuple[int, float]] = Field(..., description="Similar topics")
+    similar_topics: list[tuple[int, float]] = Field(..., description="Similar topics")
     coherence_score: float = Field(..., description="Topic coherence score")
 
 
@@ -172,7 +172,7 @@ class BatchProcessingRequest(BaseModel):
     """Batch processing request."""
 
     posts: list[PostData] = Field(
-        ..., min_items=1, max_items=1000, description="Posts to process"
+        ..., min_length=1, max_length=1000, description="Posts to process"
     )
     process_embeddings: bool = Field(True, description="Whether to compute embeddings")
     process_clustering: bool = Field(True, description="Whether to perform clustering")

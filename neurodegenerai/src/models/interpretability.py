@@ -57,7 +57,7 @@ class GradCAMVisualizer(LoggerMixin):
         if not self.handlers:
             self.logger.warning("Target layer not found, using default layer")
             # Fallback: use first conv layer
-            for name, module in self.model.named_modules():
+            for _name, module in self.model.named_modules():
                 if isinstance(module, torch.nn.Conv2d):
                     self.handlers.append(module.register_forward_hook(forward_hook))
                     self.handlers.append(module.register_backward_hook(backward_hook))
@@ -394,6 +394,8 @@ class ModelInterpretability:
 
         save_path = Path(save_dir)
         save_path.mkdir(parents=True, exist_ok=True)
+
+        from datetime import datetime
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 

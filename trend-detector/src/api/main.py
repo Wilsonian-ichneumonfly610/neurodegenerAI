@@ -181,7 +181,7 @@ async def health_check():
 
     except Exception as e:
         logger.error(f"Health check failed: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.get("/clusters/latest", response_model=ClustersResponse)
@@ -245,7 +245,7 @@ async def get_latest_clusters(limit: int = 50):
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/clusters/latest", "GET", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.get("/topics/top", response_model=TrendingTopicsResponse)
@@ -286,7 +286,7 @@ async def get_top_topics(window: int = 24, k: int = 10):
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/topics/top", "GET", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/search", response_model=SearchResponse)
@@ -354,7 +354,7 @@ async def search_posts(request: SearchRequest):
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/search", "POST", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/embed", response_model=EmbeddingResponse)
@@ -393,7 +393,7 @@ async def generate_embeddings(request: EmbeddingRequest):
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/embed", "POST", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/cluster", response_model=ClusteringResponse)
@@ -434,7 +434,7 @@ async def cluster_texts(request: ClusteringRequest):
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/cluster", "POST", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/stream", response_model=StreamResponse)
@@ -474,7 +474,7 @@ async def start_stream(request: StreamRequest, background_tasks: BackgroundTasks
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/stream", "POST", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 async def run_stream_task(
@@ -542,7 +542,7 @@ async def get_system_metrics():
                 # Get last update time
                 if posts:
                     last_update = datetime.fromisoformat(posts[0]["timestamp"])
-            except:
+            except Exception:
                 pass
 
         # Get active sources
@@ -579,7 +579,7 @@ async def get_system_metrics():
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/metrics", "GET", 500, duration)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.get("/model/info", response_model=ModelInfoResponse)
@@ -627,7 +627,7 @@ async def get_model_info():
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/model/info", "GET", 500, duration)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.exception_handler(Exception)

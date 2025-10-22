@@ -113,7 +113,7 @@ async def health_check():
 
     except Exception as e:
         logger.error(f"Health check failed: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/predict/tabular", response_model=PredictionResponse)
@@ -160,7 +160,7 @@ async def predict_tabular(request: TabularPredictionRequest):
             "/predict/tabular", "POST", 500, duration, request_id=request_id
         )
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/predict/mri", response_model=PredictionResponse)
@@ -202,7 +202,7 @@ async def predict_mri(request: MRIPredictionRequest):
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/predict/mri", "POST", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/predict/ensemble", response_model=PredictionResponse)
@@ -256,7 +256,7 @@ async def predict_ensemble(
             "/predict/ensemble", "POST", 500, duration, request_id=request_id
         )
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/predict/batch", response_model=BatchPredictionResponse)
@@ -330,7 +330,7 @@ async def predict_batch(request: BatchPredictionRequest):
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/predict/batch", "POST", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.get("/model/metrics", response_model=ModelMetricsResponse)
@@ -370,7 +370,7 @@ async def get_model_metrics():
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/model/metrics", "GET", 500, duration)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.get("/model/info", response_model=ModelInfoResponse)
@@ -405,7 +405,7 @@ async def get_model_info():
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/model/info", "GET", 500, duration)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.get("/model/features/importance", response_model=FeatureImportanceResponse)
@@ -459,7 +459,7 @@ async def get_feature_importance():
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/model/features/importance", "GET", 500, duration)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/explain", response_model=ExplanationResponse)
@@ -504,7 +504,7 @@ async def explain_prediction(request: ExplanationRequest):
         duration = (datetime.now() - start_time).total_seconds()
         log_api_request("/explain", "POST", 500, duration, request_id=request_id)
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/upload/mri")
@@ -571,10 +571,10 @@ async def upload_mri_file(file: UploadFile = File(...)):
         try:
             if "file_path" in locals():
                 os.remove(file_path)
-        except:
+        except Exception:
             pass
 
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.exception_handler(Exception)
