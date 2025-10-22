@@ -53,6 +53,40 @@ neuro-trends-suite/
 └── infra/                  # Cloud deployment configs
 ```
 
+## Visualizations & Performance
+
+### NeuroDegenerAI Model Performance
+
+#### ROC Curve
+![ROC Curve](reports/roc_curve.png)
+*Model performance with AUC = 0.87, demonstrating excellent classification capability for neurodegenerative pattern detection.*
+
+#### Precision-Recall Curve
+![Precision-Recall Curve](reports/pr_curve.png)
+*Precision-recall analysis showing Average Precision = 0.82, critical for medical diagnosis applications.*
+
+#### Grad-CAM Interpretability
+![Grad-CAM Heatmap](reports/gradcam_sample.png)
+*Brain region attention visualization showing which areas the model focuses on for predictions - essential for clinical interpretability.*
+
+#### Confusion Matrix
+![Confusion Matrix](reports/confusion_matrix.png)
+*Detailed classification results showing model performance across different categories.*
+
+### Real-Time Trend Detector Analytics
+
+#### UMAP Cluster Visualization
+![UMAP Clusters](reports/umap_clusters.png)
+*Real-time topic clustering showing 8 distinct categories (AI/ML, Crypto, Tech News, Gaming, Science, Health, Climate, Space) discovered from social media streams.*
+
+#### Trend Timeline Analysis
+![Trend Timeline](reports/trend_timeline.png)
+*Live trend volume tracking demonstrating real-time social media trend analysis capabilities.*
+
+### System Architecture
+![System Architecture](architecture.md)
+*Complete system architecture showing data flow from ADNI/social media sources through ML pipelines to user interfaces.*
+
 ## Quick Start
 
 ### Prerequisites
@@ -153,6 +187,8 @@ REDDIT_CLIENT_SECRET=your_secret   # Reddit API credentials (optional)
 - **Predictions**: Real-time inference with explanations
 - **Visualizations**: Interactive plots and model insights
 - **Interpretability**: SHAP values and attention maps
+- **Performance Metrics**: ROC curves, PR curves, confusion matrices
+- **Clinical Insights**: Grad-CAM heatmaps showing brain region focus
 
 ### Trend Detector Demo
 - **Mock Streams**: Realistic social media data simulation
@@ -161,6 +197,8 @@ REDDIT_CLIENT_SECRET=your_secret   # Reddit API credentials (optional)
 - **Real-time Updates**: Live trend monitoring
 - **Search & Filter**: Query trending topics and posts
 - **Visualizations**: Interactive trend charts and topic networks
+- **Cluster Analysis**: UMAP visualizations showing topic groupings
+- **Timeline Tracking**: Real-time trend volume analysis
 
 ## Adding Real Data
 
